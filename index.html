@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DOMContentLoaded</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- another 'Event Listener' we can use is the 'DOMContentLoaded' event. when we load a webpage, it could be possible that JS will load and excute before HTML has finshed loading.....this can result in errors. We can delay our JS from running by telling it to wait untill the DOM has finshed loading.
+
+    in some of my examples i have loaded the script in the <head>, this will load before the HTML. Within the JS file we have to use the 'DOMContentLoaded' event, to make sure the code won't run before the DOM has fully loaded -->
+
+    <!-- To fix this use the script below this
+    <script>
+      
+      let btn = document.getElementById('btn');
+        btn.addEventListener('click', (e) => {
+            // handle the click event
+        console.log('clicked');
+      });
+    
+    </script>
+
+    -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let btn = document.getElementById('btn');
+            btn.addEventListener('click', () => {
+                // handle the click event
+                console.log('appointment confirmed, see you next Tuesday at 13.00');
+            });
+        });
+    </script>   
+
+  </head>
+  <body>
+
+    <h1> Mays Beauty Salon </h1>
+
+    <button id="btn">Click Me!</button>
+
+    <p> We are extremely busy, our next availble appointment is Tuesday 16th June, 13.00 </p>
+
+    <h4> Click the button to confirm your booking</h4>
+
+  </body>
+</html>
